@@ -1,15 +1,15 @@
 package main
 
 import (
-	"fmt"
+	"log"
 
-	animal_prefix "github.com/donudon/unit-test-tutorial/animal-prefix"
+	"github.com/donudon/unit-test-tutorial/animal_prefix"
 )
 
-func main(){
+func main() {
 	animal, err := animal_prefix.GetAnimal("d")
 	if err != nil {
-		panic(err)
+		log.Println("GetAnimal error: ", err)
 	}
-	fmt.Println(animal)
+	log.Println(animal)
 }
