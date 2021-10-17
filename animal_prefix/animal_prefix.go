@@ -6,6 +6,10 @@ import (
 	"strings"
 )
 
+var (
+	ErrCode1 = errors.New("Undefined Animal")
+)
+
 func GetAnimal(firstLetter string) (animal string, err error) {
 	if strings.ToLower(firstLetter) == "d" {
 		animal = "Dog"
@@ -18,10 +22,10 @@ func GetAnimal(firstLetter string) (animal string, err error) {
 }
 
 func GetFirstLetterAnimal(animal string) (letter string, err error) {
-	if len(animal) == 0{
-		err = errors.New("Undefined Animal")
+	if len(animal) == 0 {
+		err = ErrCode1
+		return
 	}
 	letter = fmt.Sprintf(string([]rune(animal)[0]))
 	return
 }
-

@@ -1,6 +1,8 @@
 package animal_prefix
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestGetFirstLetterAnimal(t *testing.T) {
 	testCases := []struct {
@@ -14,6 +16,12 @@ func TestGetFirstLetterAnimal(t *testing.T) {
 			params:      "Dog",
 			expected:    "D",
 			expectedErr: nil,
+		},
+		{
+			name:        "2. D Return Error Case",
+			params:      "",
+			expected:    "",
+			expectedErr: ErrCode1,
 		},
 	}
 	for _, tc := range testCases {
